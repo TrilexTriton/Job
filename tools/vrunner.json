@@ -1,0 +1,25 @@
+{
+    "$schema": "https://raw.githubusercontent.com/vanessa-opensource/vanessa-runner/develop/vanessa-runner-schema.json",
+    "default": {
+        "--db-user": "Администратор",
+        "--db-pwd": ""
+    },
+    "vanessa": {
+        "--vanessasettings": "tools/VAParams.json",
+        "--pathvanessa": "oscript_modules/vanessa-automation-single/vanessa-automation-single.epf"
+    },
+    "syntax-check": {
+        "--groupbymetadata": true,
+        "--mode": [
+            "-ThinClient",
+            "-Server",
+            "-ExtendedModulesCheck",
+            "-IncorrectReferences",
+            "-UnreferenceProcedures",
+            "-HandlersExistence",
+            "-EmptyHandlers",
+            "-CheckUseModality",
+            "-CheckUseSynchronousCalls"
+        ]
+    }
+}

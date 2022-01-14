@@ -1,0 +1,42 @@
+{
+    "$schema": "https://raw.githubusercontent.com/ovcharenko-di/jenkins-lib/preloadDTURL-rework2-email/resources/schema.json",
+    "logosConfig": "logger.rootLogger=DEBUG",
+    "v8version": "8.3.20.1590",
+    "defaultBranch": "main",
+    "timeout": {
+        "syntaxCheck": 360
+    },
+    "secrets": {
+        "storagePath": "pmk-storage-path",
+        "storage": "pmk-storage-creds"
+    },
+    "stages": {
+        "initSteps": true,
+        "smoke": false,
+        "bdd": true,
+        "syntaxCheck": false,
+        "email": true
+    },
+    "initInfobase": {
+        "preloadDTURL": "http://srv-ci-01:8787/ERPCPM-PMK.dt",
+        "initMethod": "fromStorage",
+        "runMigration": true
+    },
+    "smoke": {
+        "publishToJUnitReport": false,
+        "publishToAllureReport": true
+    },
+    "emailNotification": {
+        "onAlways": true,
+        "alwaysEmailOptions": {
+            "recipientProviders": ["developers"],
+            "attachLog": true,
+            "directRecipients": [
+                "DOvcharenko@korusconsulting.ru",
+                "TKayumov@korusconsulting.ru",
+                "NZakharenko@korusconsulting.ru",
+                "YOvchinnikov@korusconsulting.ru"
+            ]
+        }
+    }
+}

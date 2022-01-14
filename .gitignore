@@ -1,0 +1,10 @@
+build/**
+coverage/**
+*.cf
+*.cfe
+*.epf
+*.erf
+oscript_modules/
+ConfigDumpInfo.xml
+ParentConfigurations.bin
+.scannerwork
